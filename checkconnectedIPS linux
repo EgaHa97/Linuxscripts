@@ -1,0 +1,1 @@
+netstat -ntu | awk '{print $5}' | grep -vE "(Address|servers|127.0.0.1)" | cut -d: -f1 | sort | uniq -c | sort -n|sed 's/^[ \t]*//'
